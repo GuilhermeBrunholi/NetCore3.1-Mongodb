@@ -1,6 +1,6 @@
 using System;
 using MongoDB.Driver;
-using TesteApi.Model;
+using TesteApi.Models;
 
 namespace TesteApi.DbContext
 {

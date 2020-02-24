@@ -1,5 +1,5 @@
 using MongoDB.Driver;
-using TesteApi.Model;
+using TesteApi.Models;
 using TesteApi.DbContext;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -41,7 +41,7 @@ namespace TesteApi.Controllers
         [HttpPut]
         public IActionResult Update([FromBody] Person person)
         {
-            _db.Peoples.ReplaceOne(p => p._id == person._id, person);
+            _db.Peoples.ReplaceOne(p => p.Id == person.Id, person);
             return Ok();
         }
 
