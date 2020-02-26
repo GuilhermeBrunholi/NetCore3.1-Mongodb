@@ -8,11 +8,11 @@ namespace TesteApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PeopleController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly MongoDbContext _db;
 
-        public PeopleController() 
+        public UserController() 
         {
             _db = new MongoDbContext();
         }
@@ -20,35 +20,35 @@ namespace TesteApi.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            List<Person> peoples = _db.Peoples.Find(m => true).ToList();
-            return Ok(peoples);
+            List<User> users = _db.Users.Find(m => true).ToList();
+            return Ok(users);
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            Person person = _db.Peoples.Find(m => m.Id == id).FirstOrDefault();
-            return Ok(person);
+            User user = _db.Users.Find(m => m.Id == id).FirstOrDefault();
+            return Ok(user);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Person person)
+        public IActionResult Post([FromBody] User user)
         {
-            _db.Peoples.InsertOne(person);
+            _db.Users.InsertOne(user);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult Update([FromBody] Person person)
+        public IActionResult Update([FromBody] User user)
         {
-            _db.Peoples.ReplaceOne(p => p.Id == person.Id, person);
+            _db.Users.ReplaceOne(p => p.Id == user.Id, user);
             return Ok();
         }
 
         [HttpDelete("{id}")]
         public IActionResult Remove(string id)
         {
-            _db.Peoples.DeleteOne(p => p.Id == id);
+            _db.Users.DeleteOne(p => p.Id == id);
             return Ok();
         }
     }

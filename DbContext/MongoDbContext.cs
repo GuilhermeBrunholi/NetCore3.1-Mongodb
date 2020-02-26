@@ -15,7 +15,7 @@ namespace TesteApi.DbContext
             try
             {
                 MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(ConnectionString));
-                var mongoClient = new MongoClient(settings);
+                MongoClient mongoClient = new MongoClient(settings);
                 _database = mongoClient.GetDatabase(DatabaseName);
             }
             catch (Exception ex)
@@ -24,11 +24,28 @@ namespace TesteApi.DbContext
             }
 
         }
-        public IMongoCollection<Person> Peoples
+
+        public IMongoCollection<User> Users
         {
             get
             {
-                return _database.GetCollection<Person>("People");
+                return _database.GetCollection<User>("Users");
+            }
+        }
+
+        public IMongoCollection<Procedure> Procedures
+        {
+            get
+            {
+                return _database.GetCollection<Procedure>("Procedures");
+            }
+        }
+
+        public IMongoCollection<Schedule> Schedules
+        {
+            get
+            {
+                return _database.GetCollection<Schedule>("Schedules");
             }
         }
     }
