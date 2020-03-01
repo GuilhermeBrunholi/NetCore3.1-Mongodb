@@ -16,6 +16,6 @@ namespace TesteApi.Models
         [Required]
         public string FantasyName { get; set; }
         [Required]
-        public List<User> Users { get; set; }
+        public List<string> Users { get; set; }
     }
 }

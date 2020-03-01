@@ -27,26 +27,17 @@ namespace TesteApi.DbContext
 
         public IMongoCollection<User> Users
         {
-            get
-            {
-                return _database.GetCollection<User>("Users");
-            }
+            get { return _database.GetCollection<User>("Users"); }
         }
 
         public IMongoCollection<Procedure> Procedures
         {
-            get
-            {
-                return _database.GetCollection<Procedure>("Procedures");
-            }
+            get { return _database.GetCollection<Procedure>("Procedures"); }
         }
 
         public IMongoCollection<Schedule> Schedules
         {
-            get
-            {
-                return _database.GetCollection<Schedule>("Schedules");
-            }
+            get { return _database.GetCollection<Schedule>("Schedules"); }
         }
     }
 }

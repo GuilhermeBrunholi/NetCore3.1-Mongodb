@@ -1,10 +1,10 @@
 using System;
-using MongoDB.Bson;
 using System.ComponentModel.DataAnnotations;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace TesteApi.Models
 {
+    
     public class User
     {
         [BsonId]
@@ -23,4 +23,6 @@ namespace TesteApi.Models
         public string Document { get; set; }
         public string Rule { get; set;} = "user";
     }
+
+
 }
