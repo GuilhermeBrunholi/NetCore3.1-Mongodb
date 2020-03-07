@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using TesteApi.DbContext;
 
 namespace TesteApi
@@ -28,6 +29,15 @@ namespace TesteApi
         {
             MongoDbContext.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
             MongoDbContext.DatabaseName = Configuration.GetSection("MongoConnection:DataBase").Value;
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Teste API",
+                    Version = "v1",
+                    Description = "Teste de api com mongodb",
+                });
+            });
             services.AddControllers();
         }
 
@@ -48,6 +58,12 @@ namespace TesteApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
         }
     }

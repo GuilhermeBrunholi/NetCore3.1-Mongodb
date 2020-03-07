@@ -23,3 +23,8 @@ C:\Users\Guilherme\Desktop\TesteApi\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.
 C:\Users\Guilherme\Desktop\TesteApi\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
 C:\Users\Guilherme\Desktop\TesteApi\bin\Debug\netcoreapp3.1\SharpCompress.dll
 C:\Users\Guilherme\Desktop\TesteApi\obj\Debug\netcoreapp3.1\TesteApi.csproj.CopyComplete
+c:\Users\Guilherme\Desktop\TesteApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+c:\Users\Guilherme\Desktop\TesteApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+c:\Users\Guilherme\Desktop\TesteApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+c:\Users\Guilherme\Desktop\TesteApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+c:\Users\Guilherme\Desktop\TesteApi\obj\Debug\netcoreapp3.1\TesteApi.MvcApplicationPartsAssemblyInfo.cs
