@@ -33,7 +33,7 @@ namespace TesteApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Teste API",
+                    Title = "Api de teste",
                     Version = "v1",
                     Description = "Teste de api com mongodb",
                 });
