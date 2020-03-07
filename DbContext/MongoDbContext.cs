@@ -18,7 +18,7 @@ namespace TesteApi.DbContext
                 MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(ConnectionString));
                 MongoClient mongoClient = new MongoClient(settings);
                 _database = mongoClient.GetDatabase(DatabaseName);
-                bool isMongoLive = _database.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(1000);
+                //bool isMongoLive = _database.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(1000);
             }
             catch (Exception ex)
             {
